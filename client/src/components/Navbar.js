@@ -27,12 +27,14 @@ function Navbar() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <div className="navbar-nav ml-auto d-flex align-items-center">
+                        {/* Language Selector */}
                         <select onChange={(e) => changeLanguage(e.target.value)} className="form-select" style={{ maxWidth: '120px' }} defaultValue={i18n.language}>
                             <option value="en">English</option>
                             <option value="zh">簡體</option>
                             <option value="tc">繁體</option>
                         </select>
 
+                        {/* Live Chat Button */}
                         <button
                             className="btn btn-light ms-3 p-2"
                             onClick={() => setShowChat(true)}
@@ -42,7 +44,8 @@ function Navbar() {
                             <i className="fa-solid fa-comments"></i>
                         </button>
 
-                        {user && (
+                        {/* Conditional Rendering for User Login/Logout */}
+                        {user ? (
                             <div className="dropdown ms-3">
                                 <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i className="fa-solid fa-user me-2"></i> {user.name}
@@ -55,11 +58,16 @@ function Navbar() {
                                     )}
                                 </ul>
                             </div>
+                        ) : (
+                            <a className="btn btn-primary ms-3" href="/login">
+                                {t('login')}
+                            </a>
                         )}
                     </div>
                 </div>
             </nav>
 
+            {/* Live Chat */}
             {showChat && <LiveChat onClose={() => setShowChat(false)} />}
         </div>
     );

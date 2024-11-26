@@ -31,6 +31,7 @@ function BookingScreen() {
     console.log('isAdmin:', isAdmin);  // Debugging line
     console.log(JSON.parse(localStorage.getItem('currentUser')));  // Debugging line
     const totalSeats = selectedSeats.length;
+    const user = JSON.parse(localStorage.getItem('currentUser')); // Example
     useEffect(() => {
     const fetchMatch = async () => {
         try {
@@ -358,23 +359,30 @@ function BookingScreen() {
                                 </div>
                             )}
     
-                            <div style={{ textAlign: 'right' }}>
+                                <div style={{ textAlign: 'right' }}>
                                 <b>
                                     <p>----------------------------</p>
                                     <p>{t('pricePerSeat')} {t('row 1 - 3 ')}: ${match.PricePerSeat}</p>
                                     <p>{t('pricePerSeat')} {t('row 4 - 7 ')}: ${match.PricePerSeat - 200}</p>
                                     <p>{t('pricePerSeat')} {t('row 8 - 10 ')}: ${match.PricePerSeat - 300}</p>
                                     <p>{t('totalAmount')}: ${totalAmount}</p>
-                                    <StripeCheckout
-                                        token={onToken}
-                                        stripeKey="pk_test_51QILyAH6tWSiTP1CVvFbr6IgR7IG2ILZ96R8gNWqQ4zQV7NqOltkWRzgzeemDvd3oHSO34aQKMBHriOQXOpGInPK00uVkhN6qq"
-                                        amount={totalAmount * 100}  // Stripe expects amount in cents
-                                        name={match.name}
-                                    >
-                                        <button className="btn btn-warning">
-                                            {t('payNow')}
-                                        </button>
-                                    </StripeCheckout>
+                                    
+                                    {user ? (
+                                        <StripeCheckout
+                                            token={onToken}
+                                            stripeKey="pk_test_51QILyAH6tWSiTP1CVvFbr6IgR7IG2ILZ96R8gNWqQ4zQV7NqOltkWRzgzeemDvd3oHSO34aQKMBHriOQXOpGInPK00uVkhN6qq"
+                                            amount={totalAmount * 100}  // Stripe expects amount in cents
+                                            name={match.name}
+                                        >
+                                            <button className="btn btn-warning">
+                                                {t('payNow')}
+                                            </button>
+                                        </StripeCheckout>
+                                    ) : (
+                                        <p className="text-danger">
+                                            {t('pleaseLoginToContinue')}
+                                        </p>
+                                    )}
                                 </b>
                             </div>
                         </div>
