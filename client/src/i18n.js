@@ -150,7 +150,6 @@ i18n
             "thank_you_message": "Thank you for your message. We’ll get back to you soon!",
             "type_message": "Type your message...",
             "send": "Send",
-            "list_matches": "Here are the matches available, please check the bookings details",
             "hi_help": "Hi! What can I help you with today?",
             "booking_info": "You can book tickets for matches using the 'Book Now' button on the match page.",
             "cancel_info": "To cancel a booking, go to 'My Bookings' and click the cancel button for the booking.",
@@ -161,7 +160,7 @@ i18n
             "how_can_i_help": "Hello! How can I help you today?",
             "Jeff" : "Jeff is Time to Work!!!",
 
-              "list_matches": "Here are the matches available:\n1. Team A vs Team B\n2. Team C vs Team D\n3. Team E vs Team F",
+              "list_matches": "Here are the matches available: HKPL U-22 League // BOC Life Hong Kong Permier League // Europa League",
               "hi_help": "Hi! What can I help you with today?",
               "booking_info": "You can book tickets for matches using the 'Book Now' button on the match page.",
               "cancel_info": "To cancel a booking, go to 'My Bookings' and click the cancel button for the booking.",
@@ -188,9 +187,7 @@ i18n
               "Not available": "Not available",
               "Canceled": "Canceled"
           
-              
-
-                  
+    
           }
         },
         zh: {
