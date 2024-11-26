@@ -59,9 +59,14 @@ function Navbar() {
                                 </ul>
                             </div>
                         ) : (
-                            <a className="btn btn-primary ms-3" href="/login">
-                                {t('login')}
-                            </a>
+                            <div className="ms-3 d-flex align-items-center">
+                                <a className="btn btn-primary me-2" href="/login">
+                                    {t('login')}
+                                </a>
+                                <a className="btn btn-secondary" href="/register">
+                                    {t('register')}
+                                </a>
+                            </div>
                         )}
                     </div>
                 </div>

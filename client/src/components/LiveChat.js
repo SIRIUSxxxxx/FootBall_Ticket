@@ -19,8 +19,8 @@ function LiveChat({ onClose }) {
             return t('booking_info');
         } else if (input.includes("cancel")) {
             return t('cancel_info');
-        } else if ("Jeff"){
-            return t('Jeff');
+        // } else if ("Jeff"){
+        //     return t('Jeff');
         } else {
             return t('default_reply');
         }
