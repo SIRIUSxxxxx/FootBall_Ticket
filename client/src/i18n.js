@@ -1,3 +1,6 @@
+//22031515D Fok Luk Hang
+//22026938D Poon Cheuk Kit
+
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector'; // Detects user language
