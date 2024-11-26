@@ -1,5 +1,6 @@
-// models/match.js
-// models/match.js
+//22031515D Fok Luk Hang
+//22026938D Poon Cheuk Kit
+
 const mongoose = require('mongoose');
 
 const matchSchema = new mongoose.Schema({
