@@ -1,7 +1,9 @@
-//22031515d Fok Luk Hang
+//22031515D Fok Luk Hang
+//22026938D Poon Cheuk Kit
+
 const mongoose = require('mongoose');
 
-// Connection URI (make sure your credentials and cluster details are correct)
+// Connection URI
 const mongoURI = 'mongodb+srv://foklukhang:foklukhang@cluster0.ougwn.mongodb.net/football-match';
 
 mongoose.connect(mongoURI, {
@@ -13,5 +15,4 @@ mongoose.connect(mongoURI, {
   console.error("Failed to connect to MongoDB", err);
 });
 
-// Exporting the mongoose instance for use in other files
 module.exports = mongoose;
