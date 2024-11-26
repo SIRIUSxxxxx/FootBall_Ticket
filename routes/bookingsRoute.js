@@ -1,8 +1,10 @@
-// bookingsRoute.js
+//22031515D Fok Luk Hang
+//22026938D Poon Cheuk Kit
+
 const express = require('express');
 const mongoose = require('mongoose');
 const router = express.Router();
-const Booking = require('../models/booking');  // Make sure the model is correctly imported
+const Booking = require('../models/booking');  
 const Match = require('../models/match');
 const stripe = require('stripe')('sk_test_51QILyAH6tWSiTP1CET68YwbqOeaQAm6jE1zTszM2yV0D3l7wIn1X5Q0oEHWcLKBEP5pCeCYIo9cNfMquHoV418i100DBfOBV0u')
 const { v4: uuidv4 } = require('uuid');
@@ -12,11 +14,9 @@ const calculateTotalDays = (fromdate, todate) => {
     const from = new Date(fromdate);
     const to = new Date(todate);
     const timeDiff = to - from;
-    return timeDiff / (1000 * 3600 * 24);  // Converts to days
+    return timeDiff / (1000 * 3600 * 24); 
 };
 
-// In bookingsRoute.js or matchRoute.js
-// Route to update match details
 router.put('/api/match/updatematch', async (req, res) => {
     const { matchId, name, type, date, venue, time, pricePerSeat, teamA, teamB, imageUrls } = req.body;
   
@@ -122,7 +122,6 @@ router.post('/bookmatch', async (req, res) => {
             totaldays,
             transactionId: payment.id,
             selectedSeats,
-            // Add TeamA and TeamB only if you want them in the booking document
             TeamA,  
             TeamB
         });
@@ -152,7 +151,7 @@ router.post('/bookmatch', async (req, res) => {
 router.post("/getbookingsbyuserid", async (req, res) => {
     const { userid } = req.body;
     try {
-        const bookings = await Booking.find({ userid }).populate('match');  // Populate match details
+        const bookings = await Booking.find({ userid }).populate('match');  
         res.send(bookings);
     } catch (error) {
         return res.status(400).json({ error });
@@ -169,8 +168,6 @@ router.delete('/cancelbooking', async (req, res) => {
         if (!booking) {
             return res.status(404).json({ message: 'Booking not found' });
         }
-        
-        // Optionally: Update the related match document to remove the booking
         const match = await Match.findById(booking.matchid);
         if (match) {
             match.currentbookings = match.currentbookings.filter(b => b.bookingid.toString() !== bookingId);
@@ -187,7 +184,7 @@ router.delete('/cancelbooking', async (req, res) => {
 // Get all bookings
 router.get("/getallbookings", async (req, res) => {
     try {
-        const bookings = await Booking.find().populate('match');  // Populate match details
+        const bookings = await Booking.find().populate('match');  
         res.send(bookings);
     } catch (error) {
         console.error('Error fetching bookings:', error);

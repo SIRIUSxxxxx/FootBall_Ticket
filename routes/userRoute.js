@@ -1,9 +1,10 @@
+//22031515D Fok Luk Hang
+//22026938D Poon Cheuk Kit
+
 const express = require('express');
 const router = express.Router();
-const User = require('../models/user'); // Make sure this path is correct
+const User = require('../models/user'); 
 
-// Registration route
-// Registration route
 router.post("/register", async (req, res) => {
     const { userId, name, email, password, nickname, gender, birthday, profileImage } = req.body;
     const newUser = new User({ userId, name, email, password, nickname, gender, birthday, profileImage });
@@ -16,7 +17,6 @@ router.post("/register", async (req, res) => {
     }
 });
 
-// In your routes file (e.g., userRoutes.js)
 router.get('/checkuser/:userId', async (req, res) => {
     const { userId } = req.params;
     try {
@@ -62,7 +62,7 @@ router.put("/update", async (req, res) => {
     try {
         const updatedUser = await User.findByIdAndUpdate(
             userId,
-            { name, email, password, nickname, gender, birthday, profileImage },  // Add profileImage here
+            { name, email, password, nickname, gender, birthday, profileImage },  
             { new: true }
         );
 
@@ -78,7 +78,7 @@ router.put("/update", async (req, res) => {
 
 // Login route
 router.post("/login", async (req, res) => {
-    console.log("Request body:", req.body); // Log the request body
+    console.log("Request body:", req.body); 
     const { email, password } = req.body;
     try {
         const user = await User.findOne({ email, password });

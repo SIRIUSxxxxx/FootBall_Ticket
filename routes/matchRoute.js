@@ -1,8 +1,9 @@
-// matchRoute.js
+//22031515D Fok Luk Hang
+//22026938D Poon Cheuk Kit
+
 const express = require('express');
 const router = express.Router();
-
-const Match = require('../models/match.js'); // Import the Match model
+const Match = require('../models/match.js'); 
 
 // Get all matches
 router.get('/getallmatch', async (req, res) => {
@@ -23,7 +24,7 @@ router.post('/updateSeats', async (req, res) => {
         const match = await Match.findById(matchId);
         if (!match) return res.status(404).json({ message: 'Match not found' });
 
-        match.totalSeats = totalSeats; // Update total seats
+        match.totalSeats = totalSeats;
         await match.save();
         res.status(200).json({ message: 'Seats updated successfully', totalSeats });
     } catch (error) {
@@ -81,7 +82,7 @@ router.post('/addmatch', async (req, res) => {
             TeamB,
             imageurls,
             date,
-            currentbookings: [],  // Initialize empty array for bookings
+            currentbookings: [],  
         });
 
         // Save the new match to the database
@@ -101,14 +102,11 @@ router.put('/updatematch/:id', async (req, res) => {
     // Log the received data for debugging
     console.log('Received matchId:', matchId);
     console.log('Received updatedData:', updatedData);
-
-   
     try {
         const match = await Match.findByIdAndUpdate(matchId, updatedData, { new: true });
         if (!match) {
             return res.status(404).json({ message: 'Match not found' });
         }
-
         res.status(200).json({ message: 'Match updated successfully', match });
     } catch (error) {
         console.error('Error updating match:', error);
