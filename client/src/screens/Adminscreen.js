@@ -287,8 +287,14 @@ function Adminscreen() {
                                 </Form.Item>
                             </Col>
                             <Col span={12}>
-                                <Form.Item label={t('Match Date')} name="date" rules={[{ required: true, message: t('Please select the match date!') }]}>
-                                    <DatePicker style={{ width: '100%' }} />
+                                <Form.Item 
+                                    label={t('Match Date')} 
+                                    name="date" 
+                                    rules={[{ required: true, message: t('Please input the match date!') }]}
+                                >
+                                    <Input 
+                                        placeholder={t('Enter match date (DD-MM-YYYY)')} 
+                                    />
                                 </Form.Item>
                             </Col>
                         </Row>
