@@ -256,37 +256,45 @@ function Adminscreen() {
 
                         <Row gutter={16}>
                             <Col span={12}>
+                                <Form.Item label={t('Total Seats')} name="totalSeats" rules={[{ required: true, message: t('Please input the total seats!') }]}>
+                                    <InputNumber min={1} style={{ width: '100%' }} />
+                                </Form.Item>
+                            </Col>
+                            <Col span={12}>
                                 <Form.Item label={t('Time')} name="Time" rules={[{ required: true, message: t('Please input the match time!') }]}>
                                     <Input />
                                 </Form.Item>
                             </Col>
+                        </Row>
+
+                        <Row gutter={16}>
                             <Col span={12}>
                                 <Form.Item label={t('Venue')} name="Venue" rules={[{ required: true, message: t('Please input the venue!') }]}>
                                     <Input />
                                 </Form.Item>
                             </Col>
-                        </Row>
-
-                        <Row gutter={16}>
                             <Col span={12}>
                                 <Form.Item label={t('Team A')} name="TeamA" rules={[{ required: true, message: t('Please input Team A!') }]}>
                                     <Input />
                                 </Form.Item>
                             </Col>
+                        </Row>
+
+                        <Row gutter={16}>
                             <Col span={12}>
                                 <Form.Item label={t('Team B')} name="TeamB" rules={[{ required: true, message: t('Please input Team B!') }]}>
                                     <Input />
                                 </Form.Item>
                             </Col>
-                        </Row>
-
-                        <Row gutter={16}>
                             <Col span={12}>
                                 <Form.Item label={t('Match Date')} name="date" rules={[{ required: true, message: t('Please select the match date!') }]}>
                                     <DatePicker style={{ width: '100%' }} />
                                 </Form.Item>
                             </Col>
-                            <Col span={12}>
+                        </Row>
+
+                        <Row gutter={16}>
+                            <Col span={24}>
                                 <Form.Item label={t('Image URLs')} name="imageurls" rules={[{ required: true, message: t('Please input the image URLs!') }]}>
                                     <Input.TextArea />
                                 </Form.Item>
