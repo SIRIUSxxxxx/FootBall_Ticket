@@ -9,6 +9,7 @@ import { Input, Button, Checkbox, message } from 'antd';
 import { useTranslation } from 'react-i18next';  // Import useTranslation
 
 function Loginscreen() {
+     // remember me functionality, and password visibility
     const [email, setemail] = useState('');
     const [password, setpassword] = useState('');
     const [loading, setLoading] = useState(false);
@@ -25,7 +26,7 @@ function Loginscreen() {
             setRememberMe(true);
         }
     }, []);
-
+    // Function to handle login when the user submits the form
     const handleLogin = async () => {
         setLoading(true);
 
