@@ -19,18 +19,14 @@ const calculateTotalDays = (fromdate, todate) => {
 
 router.put('/api/match/updatematch', async (req, res) => {
     const { matchId, name, type, date, venue, time, pricePerSeat, teamA, teamB, imageUrls } = req.body;
-  
     if (!matchId) {
       return res.status(400).json({ message: 'Match ID is required.' });
     }
-  
     try {
       const match = await Match.findById(matchId);
-  
       if (!match) {
         return res.status(404).json({ message: 'Match not found.' });
       }
-  
       // Update the match details
       match.name = name || match.name;
       match.type = type || match.type;
@@ -41,7 +37,6 @@ router.put('/api/match/updatematch', async (req, res) => {
       match.teamA = teamA || match.teamA;
       match.teamB = teamB || match.teamB;
       match.imageurls = imageUrls || match.imageurls;
-  
       // Save the updated match
       await match.save();
       res.status(200).json({ message: 'Match updated successfully.' });
@@ -71,28 +66,22 @@ router.put('/api/match/updatematch', async (req, res) => {
 // Book a match
 router.post('/bookmatch', async (req, res) => {
     console.log('Received booking data:', req.body);
-
     const { match, matchid, userid, fromdate, todate, totalamount, totalseats, token, selectedSeats } = req.body;
-
     if (!match || !matchid || !userid || !fromdate || !todate || !totalamount || !totalseats || !token || !selectedSeats) {
         return res.status(400).json({ message: 'Missing required data' });
     }
-
     try {
         // Retrieve the match document to get TeamA and TeamB
         const matchDetails = await Match.findById(matchid);
         if (!matchDetails) {
             return res.status(404).json({ message: 'Match not found' });
         }
-        
         const { TeamA, TeamB } = matchDetails;
-
         // Stripe payment processing
         const customer = await stripe.customers.create({
             email: token.email,
             source: token.id,
         });
-
         const payment = await stripe.charges.create({
             amount: totalamount * 100,
             currency: 'hkd',
