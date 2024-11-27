@@ -30,7 +30,7 @@ const userSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    profileImage: {  // New field to store profile image URL
+    profileImage: {  
         type: String,
     }
 }, {

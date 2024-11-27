@@ -31,7 +31,7 @@ function BookingScreen() {
     console.log('isAdmin:', isAdmin);  // Debugging line
     console.log(JSON.parse(localStorage.getItem('currentUser')));  // Debugging line
     const totalSeats = selectedSeats.length;
-    const user = JSON.parse(localStorage.getItem('currentUser')); // Example
+    const user = JSON.parse(localStorage.getItem('currentUser')); 
     useEffect(() => {
     const fetchMatch = async () => {
         try {

@@ -1,6 +1,9 @@
-import React, { useState } from "react"; // Correct import of useState
+//22031515D Fok Luk Hang
+//22026938D Poon Cheuk Kit
+
+import React, { useState } from "react"; 
 import HashLoader from "react-spinners/HashLoader";
-import { css } from '@emotion/react'; // Import css from emotion
+import { css } from '@emotion/react'; 
 
 function Loader() {
     console.log("Loader is rendering"); // Log to see if the component is mounted
@@ -21,7 +24,7 @@ function Loader() {
 
 
             <div style={loaderStyle}>
-                <HashLoader color="#000" loading={loading} size={150} /> {/* Increase size as needed */}
+                <HashLoader color="#000" loading={loading} size={150} />
             </div>
         </div>
     );

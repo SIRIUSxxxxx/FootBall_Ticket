@@ -1,3 +1,6 @@
+//22031515D Fok Luk Hang
+//22026938D Poon Cheuk Kit
+
 import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
@@ -10,7 +13,7 @@ import Profilescreen from './screens/Profilescreen';
 import Adminscreen from './screens/Adminscreen';
 import Landingscreen from './screens/Landingscreen';
 import UserDetailsPage from './screens/UserDetailPage';
-import './i18n'; // Correct import of i18n.js
+import './i18n'; 
 
 function App() {
   return (

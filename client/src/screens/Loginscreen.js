@@ -14,7 +14,7 @@ function Loginscreen() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState();
     const [rememberMe, setRememberMe] = useState(false);
-    const [isPasswordVisible, setIsPasswordVisible] = useState(false); // State for visibility toggle
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false); 
     const { t } = useTranslation();  // Use the translation hook
 
     // Check if email is in localStorage when component mounts
@@ -86,8 +86,6 @@ function Loginscreen() {
                                 type={isPasswordVisible ? 'text' : 'password'} // Toggle type between 'text' and 'password'
                             />
                         </div>
-
-                        {/* Password visibility toggle placed after the password field */}
                         <Button 
                             type="link" 
                             onClick={() => setIsPasswordVisible(!isPasswordVisible)}

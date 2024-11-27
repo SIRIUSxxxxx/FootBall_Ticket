@@ -12,10 +12,10 @@ i18n
   .use(XHR)
   .use(initReactI18next)
   .init({
-    fallbackLng: 'en', // Default language if detected language is not available
+    fallbackLng: 'en',
     debug: true,
     interpolation: {
-      escapeValue: false, // React already escapes values
+      escapeValue: false, 
     },
     resources: {
         en: {

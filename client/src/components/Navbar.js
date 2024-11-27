@@ -1,3 +1,6 @@
+//22031515D Fok Luk Hang
+//22026938D Poon Cheuk Kit
+
 import React, { useState } from "react";
 import { useTranslation } from 'react-i18next';
 import LiveChat from './LiveChat'; // Import the LiveChat component
@@ -27,14 +30,12 @@ function Navbar() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <div className="navbar-nav ml-auto d-flex align-items-center">
-                        {/* Language Selector */}
                         <select onChange={(e) => changeLanguage(e.target.value)} className="form-select" style={{ maxWidth: '120px' }} defaultValue={i18n.language}>
                             <option value="en">English</option>
                             <option value="zh">簡體</option>
                             <option value="tc">繁體</option>
                         </select>
 
-                        {/* Live Chat Button */}
                         <button
                             className="btn btn-light ms-3 p-2"
                             onClick={() => setShowChat(true)}
@@ -43,8 +44,6 @@ function Navbar() {
                         >
                             <i className="fa-solid fa-comments"></i>
                         </button>
-
-                        {/* Conditional Rendering for User Login/Logout */}
                         {user ? (
                             <div className="dropdown ms-3">
                                 <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">

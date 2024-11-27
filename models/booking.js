@@ -4,7 +4,7 @@
 const mongoose = require('mongoose');
 
 const bookingSchema = mongoose.Schema({
-    match: { type: mongoose.Schema.Types.ObjectId, ref: 'Match', required: true },  // Reference to the Match model
+    match: { type: mongoose.Schema.Types.ObjectId, ref: 'Match', required: true }, 
     matchid: { type: String, required: true },
     userid: { type: String, required: true },
     fromdate: { type: String, required: true },
@@ -13,7 +13,7 @@ const bookingSchema = mongoose.Schema({
     totalseats: { type: Number, required: true },
     transactionId: { type: String, required: true },
     status: { type: String, required: true, default: 'booked' },
-    selectedSeats: { type: [String], required: true },  // Array of seat identifiers
+    selectedSeats: { type: [String], required: true },  
 }, { timestamps: true });
 
 const model = mongoose.model('booking', bookingSchema);

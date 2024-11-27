@@ -1,3 +1,6 @@
+//22031515D Fok Luk Hang
+//22026938D Poon Cheuk Kit
+
 import React, { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -26,7 +29,6 @@ function Match({ match, fromdate, todate }) {
                     <p>{t('date')}: {match.date}</p>
                 </b>
                 <div style={{ float: "right" }}>
-                    {/* "Book Now" button is always visible */}
                     <Link to={`/book/${match._id}/${fromdate || null}/${todate || null}`}>
                         <button className='btn btn-primary m-2'>{t('bookNow')}</button>
                     </Link>

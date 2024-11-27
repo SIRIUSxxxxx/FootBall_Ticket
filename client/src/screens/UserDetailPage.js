@@ -29,7 +29,6 @@ function UserDetailsPage() {
       <p><strong>Name:</strong> {userDetails.name}</p>
       <p><strong>Email:</strong> {userDetails.email}</p>
       <p><strong>Gender:</strong> {userDetails.gender}</p>
-      {/* Add more user details here */}
     </div>
   );
 }

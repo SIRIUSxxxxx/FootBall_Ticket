@@ -23,7 +23,7 @@ function Homescreen() {
     const { t } = useTranslation();  // Use the translation hook
 
     const [searchkey, setsearchkey] = useState('');
-    const [type, settype] = useState('all'); // Default type is 'all'
+    const [type, settype] = useState('all'); 
 
     useEffect(() => {
         const fetchmatch = async () => {
@@ -49,8 +49,6 @@ function Homescreen() {
         if (dates && dates.length === 2) {
             const startDate = dates[0];
             const endDate = dates[1];
-
-            // Format the dates correctly using moment().format()
             const formattedStartDate = startDate.format('DD-MM-YYYY');
             const formattedEndDate = endDate.format('DD-MM-YYYY');
 

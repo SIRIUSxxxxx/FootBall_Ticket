@@ -32,7 +32,6 @@ function Adminscreen() {
     }, []);
 
     // Fetch matches on component mount
-    // Fetch matches and update bookings with match names
     useEffect(() => {
         axios.get('http://localhost:5000/api/matches/getallmatch')
             .then(response => {

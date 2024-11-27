@@ -13,7 +13,7 @@ const matchSchema = new mongoose.Schema({
     TeamA: { type: String, required: true },
     TeamB: { type: String, required: true },
     imageurls: [{ type: String, required: true }],
-    totalSeats: { type: Number, require: true }, // Default 200 seats
+    totalSeats: { type: Number, require: true }, 
     date: { type: String, required: true },
     currentbookings: [{
         bookingid: { type: mongoose.Schema.Types.ObjectId, ref: 'Booking' },

@@ -294,10 +294,8 @@ export function MyBookings({ user }) {
                                 <hr />
                                 <div>
                                     <p><strong>{t('Match ID')}:</strong> {booking.matchid}</p>
-                                    <p><strong>{t('Match Name')}:</strong> {booking.match?.name || t('Not available')}</p> {/* Match name added here */}
+                                    <p><strong>{t('Match Name')}:</strong> {booking.match?.name || t('Not available')}</p> 
                                     <p><strong>{t('Transaction ID')}:</strong> {booking.transactionId}</p>
-                                    {/* <p><strong>{t('From Date')}:</strong> {new Date(booking.fromdate).toLocaleString()}</p>
-                                    <p><strong>{t('To Date')}:</strong> {new Date(booking.todate).toLocaleString()}</p> */}
                                     <p><strong>{t('Status')}:</strong> {booking.status}</p>
                                     <p><strong>{t('Seats')}:</strong> {booking.selectedSeats.join(', ')}</p>
                                     <p><strong>{t('Total Amount')}:</strong> ${booking.totalamount}</p>
