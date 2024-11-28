@@ -8,10 +8,13 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next'; // Import useTranslation hook
 
 function Match({ match, fromdate, todate }) {
+    // State to manage modal visibility
     const [show, setShow] = useState(false);
     const { t } = useTranslation(); // Get the translation function
 
+    // Function to close the modal
     const handleClose = () => setShow(false);
+     // Function to open the modal
     const handleShow = () => setShow(true);
 
     return (
