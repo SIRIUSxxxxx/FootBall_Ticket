@@ -7,13 +7,15 @@ import LiveChat from './LiveChat'; // Import the LiveChat component
 function Navbar() {
     const { t, i18n } = useTranslation();
     const user = JSON.parse(localStorage.getItem('currentUser'));
-    const [showChat, setShowChat] = useState(false);
-
+    const [showChat, setShowChat] = useState(false);// State to manage visibility of the live chat
+    
+ // Function to handle user logout
     function logout() {
         localStorage.removeItem('currentUser');
         window.location.href = "/login";
     }
-
+    
+ // Function to change the application language
     const changeLanguage = (lang) => {
         i18n.changeLanguage(lang);
     };
