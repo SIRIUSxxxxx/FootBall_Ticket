@@ -61,11 +61,11 @@ router.post('/getmatchbyid', async (req, res) => {
 // Add new match
 router.post('/addmatch', async (req, res) => {
     const {
-        name, type, description, PricePerSeat, Time, Venue, TeamA, TeamB, imageurls, date
+        name, type, description, PricePerSeat, Time, Venue, TeamA, TeamB, imageurls, date,totalSeats
     } = req.body;
 
     // Check if all required fields are provided
-    if (!name || !type || !description || !PricePerSeat || !Time || !Venue || !TeamA || !TeamB || !imageurls || !date) {
+    if (!name || !type || !description || !PricePerSeat || !Time || !Venue || !TeamA || !TeamB || !imageurls || !date||!totalSeats) {
         return res.status(400).json({ message: 'All fields are required' });
     }
 
@@ -76,6 +76,7 @@ router.post('/addmatch', async (req, res) => {
             type,
             description,
             PricePerSeat,
+            totalSeats,
             Time,
             Venue,
             TeamA,

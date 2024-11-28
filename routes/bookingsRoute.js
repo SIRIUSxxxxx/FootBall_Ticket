@@ -30,9 +30,9 @@ router.put('/api/match/updatematch', async (req, res) => {
       // Update the match details
       match.name = name || match.name;
       match.type = type || match.type;
+      match.totalSeats = type || match.totalSeats;
       match.date = date || match.date;
       match.venue = venue || match.venue;
-      match.time = time || match.time;
       match.pricePerSeat = pricePerSeat || match.pricePerSeat;
       match.teamA = teamA || match.teamA;
       match.teamB = teamB || match.teamB;
