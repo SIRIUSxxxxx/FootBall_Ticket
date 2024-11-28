@@ -10,7 +10,7 @@ const bookingSchema = mongoose.Schema({
     fromdate: { type: String, required: true },
     todate: { type: String, required: true },
     totalamount: { type: Number, required: true },
-    totalseats: { type: Number, required: true ,default: 200},
+    totalseats: { type: Number, required: true },
     transactionId: { type: String, required: true },
     status: { type: String, required: true, default: 'booked' },
     selectedSeats: { type: [String], required: true },  

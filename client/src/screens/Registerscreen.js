@@ -55,6 +55,11 @@ function Registerscreen() {
             return;
         }
 
+        if (!passwordPattern.test(password)) {
+            setError("Password must be at least 8 characters long, include at least one letter, one number, and one special character.");
+            return;
+        }
+
         if (password !== cpassword) {
             setError("Passwords do not match!");
             return;
